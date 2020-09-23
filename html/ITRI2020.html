@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #0c1349;
+      }
+      a {
+        text-decoration: none;
+      }
+      .blue-text {
+        color: #0b72ac;
+      }
+      .orange-text {
+        color: #bd4a2f;
+      }
+
+      .purple-text {
+        color: #62288e;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 85px;
+        background-color: #1c2774;
+        font-weight: 700;
+        padding: 0 20px;
+        z-index: 1;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        color: #ffffff;
+        font-size: 18px;
+      }
+      .logo {
+        width: 80px;
+      }
+      .about {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 75%;
+      }
+
+      .about a {
+        color: #fff;
+      }
+      .about a:hover {
+        color: #aaaaaa;
+      }
+      .hero {
+        padding-top: 85px;
+        background-color: rgb(37, 64, 151);
+      }
+      .hero img {
+        width: 100%;
+      }
+      .box-info {
+        background-color: #0c1349;
+        width: 100%;
+        margin: 0px 0 80px 0;
+      }
+      .box-info > .text1 {
+        display: flex;
+        background-color: rgb(37, 64, 151);
+        height: 80px;
+        width: 100%;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        align-items: center;
+        justify-content: center;
+      }
+      .box-info > .text2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        font-size: 24px;
+        font-weight: 500;
+        color: #ffffff;
+        width: 960px;
+        padding-top: 100px;
+        margin: 0 auto;
+      }
+
+      .box-info > .text2 > h2 {
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      .box-info > .text2 > p {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 300;
+      }
+      .box-info > .text2 > .orange-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff9d3a;
+        width: 960px;
+        border-bottom: 2px solid #ff9d3a;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        margin: 0 auto;
+        position: relative;
+        margin: 100px 0 50px 0;
+      }
+      .box-info > .text2 > .orange-line > span {
+        display: flex;
+        /* align-items: center;
+            justify-content: center;     */
+        /* text-align: center; */
+        position: absolute;
+        /* top: -16px; */
+        padding: 0 10px;
+        background-color: #0c1349;
+      }
+      .box-info > .pic1 {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 860px;
+        margin: 0 auto;
+      }
+      .box-info > .pic1 > .box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .box-info > .pic1 > .box > .img-content {
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        /* align-items: center;
+            justify-content: center; */
+        position: absolute;
+        top: 95px;
+        text-align: center;
+      }
+
+      .box-info > .pic1 > .box > .time {
+        display: flex;
+        color: #ff9d3a;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+      }
+      .box-info > .pic1 > .box > .content {
+        display: flex;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 30px;
+        width: 180px;
+      }
+
+      .introduction > .h {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        height: 80px;
+        background-color: rgb(37, 64, 151);
+        width: 100%;
+      }
+      .introduction > .box {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 0 70px;
+      }
+      .introduction > .box > .lecturer {
+        display: flex;
+        flex-direction: column;
+        width: 348px;
+        align-items: center;
+      }
+      .introduction > .box > .lecturer > .img {
+        display: flex;
+        width: 288px;
+        height: 288px;
+        margin: 40px 0 20px 0;
+      }
+      .introduction > .box > .lecturer > .img > img {
+        width: 100%;
+      }
+
+      .introduction > .box > .lecturer > .name {
+        color: #ff9d3a;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 10px;
+      }
+      .introduction > .box > .lecturer > .title {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+      .introduction > .box > .lecturer > .content {
+        width: 288px;
+        height: 572px;
+        color: #fff;
+        font-size: 18px;
+        line-height: 30px;
+        border: 1px solid #ffffff;
+        padding: 30px;
+        margin: 10px 0;
+      }
+      .agenda {
+        margin: 70px 0 100px 0;
+      }
+      .agenda > .h {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        height: 80px;
+        background-color: rgb(37, 64, 151);
+        width: 100%;
+      }
+      .agenda > .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 100px 0;
+      }
+
+      .agenda > .content > .img {
+        display: flex;
+        justify-content: center;
+        width: 960px;
+        height: 50px;
+        background: url(/MMMH59HTML/bar-bg.png) top center;
+      }
+      .agenda > .content > .img > p {
+        display: flex;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        margin: auto;
+      }
+      .agenda > .content > .text > p {
+        display: flex;
+        font-size: 20px;
+        font-weight: 700;
+        color: #ff9d3a;
+        justify-content: center;
+        margin: 20px 0 100px 0;
+      }
+      .agenda>.content>.box{
+        width: 1160px;
+        border-top: 1px solid #fff;
+        display: flex;
+      }
+
+      .agenda>.content>.box:last-child {
+        border-bottom: 1px solid #fff;
+      }
+
+      .agenda>.content>.box>.time{
+        width: 13%;
+        height: 50%;
+        background-color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 27px;
+        color: #001150;
+        padding: 10px ;
+        text-align: center;
+      }
+
+      .agenda>.content>.box>.container {
+        padding: 10px 0 30px 100px;
+      }
+
+      .agenda>.content>.box>.container>.text-en{
+        font-size: 20px;
+        font-weight: 700;
+        color: #ff9d3a;
+      }
+
+      .agenda>.content>.box>.container>.text-en>p {
+        margin-bottom: 29px;
+      }
+      .agenda>.content>.box>.container>.text-ct{
+        font-size: 18px;
+        color: #fff;
+        line-height: 24px;
+      }
+      .viewpoint>.content>.img{
+        margin: 0 auto;
+        width: 960px;
+        height: 50px;
+        background:url(/MMMH59HTML/bar-bg.png)top center;
+        color: #fff;
+        
+      }
+      .viewpoint>.content>.img>p{
+        text-align: center;
+        padding-top: 15px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .viewpoint>.content>.text>p{
+        text-align: center;
+        padding-top: 15px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #ff9d3a;
+      }
+      
+    
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <img src="MMMH59HTML/logo.png" alt="logo" />
+        </div>
+
+        <div class="about">
+          <div><a href="">About 2020 ITRI ICT TechDay</a></div>
+          <div><a href="">講者簡介</a></div>
+          <div><a href="">活動議程</a></div>
+          <div><a href="">展區特色</a></div>
+          <div><a href="">交通資訊</a></div>
+          <div class="transition-color">
+            <a href="">立即報名</a>
+          </div>
+          <div><a href="">歷屆回顧</a></div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="hero">
+        <img src="MMMH59HTML/banner01.png" />
+      </div>
+
+      <div class="box-info">
+        <div class="text1">About 2020 ITRI ICT TechDay</div>
+        <div class="text2">
+          <h2>領航科技 實現未來 Realizing 5G Futures</h2>
+          <p>
+            超前部署，重新定義ICT產業新指標，共創下一代技術制高點！5G
+            正式開台，商用起步風起雲湧，在大環境的衝擊之下，產業規則即將改寫。
+            <br />
+            <br />
+            2020 ITRI ICT TechDay
+            將透過重量級專家觀點分享，從「5G通訊/邊緣運算」、「
+            AI晶片」、「自駕車/車聯網」、「資訊安全」等關鍵領域深入剖析，並展出最新產業應用，與您一同掌握
+            ICT 技術新趨勢，揭開未來產業的新面貌，實現 5G 大未來。
+          </p>
+
+          <div class="orange-line">
+            <span> 關鍵布局　x　前瞻應用　x　技術剖析 </span>
+          </div>
+        </div>
+        <div class="pic1">
+          <div class="box">
+            <img src="MMMH59HTML/about-01.png" />
+            <div class="img-content blue-text">
+              <p>ICT<br />趨勢論壇</p>
+            </div>
+            <div class="time">
+              <p>09:00-12:00</p>
+            </div>
+
+            <div class="content">
+              <p>國際級ICT產業專家趨勢演講，分享國際最新動態，掌握產業關鍵。</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="MMMH59HTML/about-02.png" />
+            <div class="img-content orange-text">
+              <p>ICT<br />專家觀點</p>
+            </div>
+            <div class="time">
+              <p>13:00-17:00</p>
+            </div>
+            <div class="content">
+              <p>聚焦五大關鍵領域，深入探討ICT產業發展，完整剖析最新技術。</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="MMMH59HTML/about-03.png" />
+            <div class="img-content purple-text">
+              <p>ICT<br />展示體驗</p>
+            </div>
+            <div class="time">
+              <p>09:00-17:00</p>
+            </div>
+            <div class="content">
+              <p>
+                超過30項最新ICT應用技術於現場完整展示，與國際同步體驗最前瞻的技術應用。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="introduction">
+        <div class="h">講者簡介</div>
+        <div class="box">
+          <div class="lecturer">
+            <div class="img"><img src="MMMH59HTML/lecturer-01.png" /></div>
+            <div class="name">闕志克 Tzi-Cker Chiueh</div>
+            <div class="title">
+              / 工研院資訊與通訊研究所 所長<br />
+              Vice President ＆ General <br />
+              Director, ICL, ITRI
+            </div>
+            <div class="content">
+              闕志克博士目前擔任工研院資通所「資訊與通訊研究所」所長，曾擔任「雲端運算行動應用科技中心」主任及紐約石溪大學電腦科學系教授。闕博士曾任職賽門鐵克(
+              Symantec )美國總部核心研究實驗室總監和美國國防先進研究計畫署(
+              DARPA
+              )策劃顧問，在系統軟體、網路架構與資訊安全的創新應用上研究成果豐碩，發表過相關學術文章超過250篇，並多次獲得國際性最佳論文獎殊榮。
+            </div>
+          </div>
+          <div class="lecturer">
+            <div class="img"><img src="MMMH59HTML/lecturer-02.png" /></div>
+            <div class="name">井琪 Chee Ching</div>
+            <div class="title">
+              / 遠傳電信 總經理<br />
+              President, Far EasTone<br />
+              Telecommunications
+            </div>
+            <div class="content">
+              井琪博士於2018年加入遠傳電信，先擔任轉型辦公室首席轉型長，並於2019年接任遠傳電信總經理一職。自接任以來，她致力於推動「精實、轉型、再成長」的策略，培養「5G大人物」人才並帶領團隊目標超乎傳統電信業者角色。加入遠傳電信前，井琪博士擁有AT＆T網路運營及資訊科技管理長達23年的經驗，她專精網路運營及規劃，工序工程以及系統解決方案等領域。並於2018年獲選”美國亞裔50傑出企業家”的肯定。
+            </div>
+          </div>
+          <div class="lecturer">
+            <div class="img"><img src="MMMH59HTML/lecturer-03.png" /></div>
+            <div class="name">黃欽勇 Colley Hwang</div>
+            <div class="title">
+              / DIGITIMES電子時報 社長<br />
+              Founder ＆ President,<br />
+              DIGITIMES
+            </div>
+            <div class="content">
+              黃欽勇社長是位資歷超過35年的產業分析師，著有《Asian
+              Edge》、《科技島鏈》、《巧借東風》、《出擊》、《西進與長征》、《打造數位台灣》、《跨世紀資訊商戰》、《電腦王國ROC》等書，一路見證PC、行動通信與物聯網時代的變革。曾受邀到微軟、台積電、鴻海、友達、聯電、宏碁、聯想、三星、華為、京東方、應用材料、新思科技、Rohm、Epson等多家國際企業總部講授產業趨勢，為身經百戰的跨界創業與產業專家。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="agenda">
+        <div class="h">活動議程</div>
+        <div class="content">
+          <div class="img"><p>ITRI ICT 趨勢論壇</p></div>
+          <div class="text"><p>洞悉產業趨勢</p></div>
+          <div class="box">
+            <div class="time">
+              <p>09:00 - 09:30</p>
+            </div>
+            <div class="container">
+              <div class="text-en"><p>Registration</p></div>
+              <div class="text-ct"><p>報到進場</p></div>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="time">
+              <p>09:30 - 09:40</p>
+            </div>
+            <div class="container">
+              <div class="text-en"><p>Opening Remarks</p></div>
+              <div class="text-ct"><p>開場致詞</p></div>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="time">
+              <p>09:40 - 10:20</p>
+            </div>
+            <div class="container">
+              <div class="text-en"><p>ICT產業趨勢與ICL重點技術　Scope of ICT Technology</p></div>
+              <div class="text-ct"><p>闕志克 / 工業技術研究院資訊與通訊研究所 所長<br>Tzi-Cker Chiueh / Vice President ＆ General Director, ICL, ITRI</p></div>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="time">
+              <p>10:20 - 11:00</p>
+            </div>
+            <div class="container">
+              <div class="text-en"><p>5G應用新紀元，提昇智慧新物聯　Enhance Smart IoT in the new 5G era</p></div>
+              <div class="text-ct"><p>井琪 / 遠傳電信 總經理<br>Chee Ching / President, Far EasTone Telecommunications</p></div>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="time">
+              <p>11:00 - 11:40</p>
+            </div>
+            <div class="container">
+              <div class="text-en"><p>斷鏈之後，科技產業鏈的未來　Disconnected ICT Supply Chains : New Power Plays Unfolding</p></div>
+              <div class="text-ct"><p>黃欽勇 / DIGITIMES電子時報 社長<br>Colley Hwang / Founder ＆ President, DIGITIMES</p></div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="viewpoint">
+        <div class="content">
+          <div class="img"><p>ICT專家觀點</p></div>
+          <div class="text"><p>剖析專業技術</p></div>
+        </div>  
+      </div>
+    </section>
+  </body>
+</html>
